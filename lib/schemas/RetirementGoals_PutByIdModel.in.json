@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "requestBody": {
+            "properties": {
+                "externalDestinationId": {
+                    "maxLength": 64,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "factFinderId": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "head1RetirementDate": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "head2RetirementDate": {
+                    "format": "date-time",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "factFinderId"
+            ],
+            "type": "object"
+        }
+    }
+}

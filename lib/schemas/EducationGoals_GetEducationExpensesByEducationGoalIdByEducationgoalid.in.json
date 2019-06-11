@@ -1,0 +1,10 @@
+{
+    "type": "object",
+    "properties": {
+        "educationGoalId": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        }
+    }
+}

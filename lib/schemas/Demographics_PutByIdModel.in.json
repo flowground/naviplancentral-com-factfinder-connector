@@ -1,0 +1,132 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "requestBody": {
+            "properties": {
+                "city": {
+                    "type": "string"
+                },
+                "externalDestinationId": {
+                    "maxLength": 64,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "externalSourceId": {
+                    "type": "string"
+                },
+                "factFinderId": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "head1": {
+                    "properties": {
+                        "alreadyRetired": {
+                            "type": "boolean"
+                        },
+                        "birthDate": {
+                            "format": "date-time",
+                            "type": "string"
+                        },
+                        "externalDestinationId": {
+                            "type": "string"
+                        },
+                        "firstName": {
+                            "maxLength": 255,
+                            "minLength": 0,
+                            "type": "string"
+                        },
+                        "gender": {
+                            "enum": [
+                                "Male",
+                                "Female"
+                            ],
+                            "type": "string"
+                        },
+                        "lastName": {
+                            "maxLength": 255,
+                            "minLength": 0,
+                            "type": "string"
+                        },
+                        "taxFilingStatus": {
+                            "format": "int32",
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "firstName",
+                        "lastName",
+                        "birthDate",
+                        "gender",
+                        "taxFilingStatus",
+                        "alreadyRetired"
+                    ],
+                    "type": "object"
+                },
+                "head2": {
+                    "properties": {
+                        "alreadyRetired": {
+                            "type": "boolean"
+                        },
+                        "birthDate": {
+                            "format": "date-time",
+                            "type": "string"
+                        },
+                        "externalDestinationId": {
+                            "type": "string"
+                        },
+                        "firstName": {
+                            "maxLength": 255,
+                            "minLength": 0,
+                            "type": "string"
+                        },
+                        "gender": {
+                            "enum": [
+                                "Male",
+                                "Female"
+                            ],
+                            "type": "string"
+                        },
+                        "lastName": {
+                            "maxLength": 255,
+                            "minLength": 0,
+                            "type": "string"
+                        },
+                        "taxFilingStatus": {
+                            "format": "int32",
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "firstName",
+                        "lastName",
+                        "birthDate",
+                        "gender",
+                        "taxFilingStatus",
+                        "alreadyRetired"
+                    ],
+                    "type": "object"
+                },
+                "jointAnalysis": {
+                    "type": "boolean"
+                },
+                "state": {
+                    "format": "int32",
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "jointAnalysis",
+                "head1",
+                "factFinderId",
+                "city",
+                "state"
+            ],
+            "type": "object"
+        }
+    }
+}

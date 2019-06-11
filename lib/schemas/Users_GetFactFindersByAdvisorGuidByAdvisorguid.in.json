@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "advisorGuid": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

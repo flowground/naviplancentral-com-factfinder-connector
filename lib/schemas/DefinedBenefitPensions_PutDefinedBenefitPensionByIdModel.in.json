@@ -1,0 +1,46 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "requestBody": {
+            "properties": {
+                "description": {
+                    "maxLength": 255,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "estimatedAmount": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "externalDestinationId": {
+                    "type": "string"
+                },
+                "factFinderId": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "member": {
+                    "enum": [
+                        "Client",
+                        "CoClient"
+                    ],
+                    "type": "string"
+                },
+                "startDate": {
+                    "format": "date-time",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "factFinderId",
+                "description"
+            ],
+            "type": "object"
+        }
+    }
+}

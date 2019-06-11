@@ -1,0 +1,38 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "externalDestinationName": {
+                    "maxLength": 49,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "externalSystem": {
+                    "enum": [
+                        "Naviplan"
+                    ],
+                    "type": "string"
+                },
+                "factFinderId": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "planAction": {
+                    "enum": [
+                        "New",
+                        "Duplicate",
+                        "Project"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "factFinderId",
+                "externalSystem",
+                "planAction"
+            ],
+            "type": "object"
+        }
+    }
+}

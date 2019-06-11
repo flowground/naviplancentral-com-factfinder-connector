@@ -1,0 +1,43 @@
+{
+    "type": "object",
+    "properties": {
+        "factFinderId": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "requestBody": {
+            "properties": {
+                "available": {
+                    "type": "boolean"
+                },
+                "moduleName": {
+                    "enum": [
+                        "Demographics",
+                        "Assets",
+                        "Liabilities",
+                        "Incomes",
+                        "Expenses",
+                        "Insurance",
+                        "Retirement",
+                        "Education",
+                        "MajorPurchase"
+                    ],
+                    "type": "string"
+                },
+                "visited": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "moduleName"
+            ],
+            "type": "object"
+        }
+    }
+}

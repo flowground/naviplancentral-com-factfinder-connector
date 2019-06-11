@@ -1,0 +1,57 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "requestBody": {
+            "properties": {
+                "description": {
+                    "maxLength": 255,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "externalDestinationId": {
+                    "maxLength": 64,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "factFinderId": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "marketValue": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "owner": {
+                    "enum": [
+                        "Client",
+                        "CoClient",
+                        "Joint"
+                    ],
+                    "type": "string"
+                },
+                "purchaseAmount": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "purchaseDate": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "type": {
+                    "format": "int32",
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "factFinderId",
+                "description"
+            ],
+            "type": "object"
+        }
+    }
+}

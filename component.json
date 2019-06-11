@@ -1,0 +1,2638 @@
+{
+    "title": "Advicent.FactFinderService",
+    "description": "An API for accessing the Narrator Fact Finder.",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/naviplancentral.com/factfinder/v1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://demo.uat.naviplancentral.com/factfinder",
+                    "http://demo.uat.naviplancentral.com/factfinder",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "AccountTypes_GetByCountry": {
+            "main": "./lib/actions/AccountTypes_GetByCountry.js",
+            "title": "Description: This operation retrieves all Account Types for the specified country.<br />\r\n              Purpose: Provides access to the Account Types including id and type description.",
+            "description": "Description: This operation retrieves all Account Types for the specified country.<br />\r\n              Purpose: Provides access to the Account Types including id and type description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AccountTypes_GetByCountry.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AccountTypes_GetById": {
+            "main": "./lib/actions/AccountTypes_GetById.js",
+            "title": "Description: This operation retrieves all Account Types for the specified id.<br />\r\n              Purpose: Provides access to the Account Types including id and type description.",
+            "description": "Description: This operation retrieves all Account Types for the specified id.<br />\r\n              Purpose: Provides access to the Account Types including id and type description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AccountTypes_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Accounts_GetAccountsByFactFinderIdByFactfinderidExternalsourceid": {
+            "main": "./lib/actions/Accounts_GetAccountsByFactFinderIdByFactfinderidExternalsourceid.js",
+            "title": "Description: This operation retrieves all Accounts for the specified Fact Finder ID and/or external source ID.<br />\r\n              Purpose: Provides access to the Account information including description and market value.",
+            "description": "Description: This operation retrieves all Accounts for the specified Fact Finder ID and/or external source ID.<br />\r\n              Purpose: Provides access to the Account information including description and market value.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Accounts_GetAccountsByFactFinderIdByFactfinderidExternalsourceid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Accounts_PostByModel": {
+            "main": "./lib/actions/Accounts_PostByModel.js",
+            "title": "Description: The operation creates an Account.<br />\r\n              Purpose: Allows for creation of Accounts on a Fact Finder.",
+            "description": "Description: The operation creates an Account.<br />\r\n              Purpose: Allows for creation of Accounts on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Accounts_PostByModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Accounts_GetAccountHoldingByAccountidId": {
+            "main": "./lib/actions/Accounts_GetAccountHoldingByAccountidId.js",
+            "title": "Description: This operation retrieves a single Account Holding for the specified Account Holding ID and Account ID.<br />\r\n              Purpose: Provides access to the Account Holding information including description and market value.",
+            "description": "Description: This operation retrieves a single Account Holding for the specified Account Holding ID and Account ID.<br />\r\n              Purpose: Provides access to the Account Holding information including description and market value.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Accounts_GetAccountHoldingByAccountidId.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Accounts_DeleteAccountById": {
+            "main": "./lib/actions/Accounts_DeleteAccountById.js",
+            "title": "Description: The operation removes an Account tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of an Account from a Fact Finder.",
+            "description": "Description: The operation removes an Account tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of an Account from a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Accounts_DeleteAccountById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Accounts_GetById": {
+            "main": "./lib/actions/Accounts_GetById.js",
+            "title": "Description: This operation retrieves a single Account for the specified Account ID.<br />\r\n              Purpose: Provides access to the Account information including description and market value.",
+            "description": "Description: This operation retrieves a single Account for the specified Account ID.<br />\r\n              Purpose: Provides access to the Account information including description and market value.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Accounts_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Accounts_PutByIdModel": {
+            "main": "./lib/actions/Accounts_PutByIdModel.js",
+            "title": "Description: The operation updates an Account.<br />\r\n              Purpose: Allows for complete replacement of an Account on a Fact Finder.",
+            "description": "Description: The operation updates an Account.<br />\r\n              Purpose: Allows for complete replacement of an Account on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Accounts_PutByIdModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Clients_PostByModel": {
+            "main": "./lib/actions/Clients_PostByModel.js",
+            "title": "Description: This operation submits the Fact Finder data to an external system.<br />\r\n              Purpose: Allows Fact Finder data to be persisted in another system for that system's consumption and use.",
+            "description": "Description: This operation submits the Fact Finder data to an external system.<br />\r\n              Purpose: Allows Fact Finder data to be persisted in another system for that system's consumption and use.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Clients_PostByModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CriticalIllnessInsurancePolicies_GetCriticalIllnessInsurancePoliciesByFactFinderIdByFactfinderid": {
+            "main": "./lib/actions/CriticalIllnessInsurancePolicies_GetCriticalIllnessInsurancePoliciesByFactFinderIdByFactfinderid.js",
+            "title": "Description: This operation retrieves all Critical Illness Insurance Policies for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Critical Illness Insurance Policies including description and policy type.",
+            "description": "Description: This operation retrieves all Critical Illness Insurance Policies for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Critical Illness Insurance Policies including description and policy type.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CriticalIllnessInsurancePolicies_GetCriticalIllnessInsurancePoliciesByFactFinderIdByFactfinderid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CriticalIllnessInsurancePolicies_PostByModel": {
+            "main": "./lib/actions/CriticalIllnessInsurancePolicies_PostByModel.js",
+            "title": "Description: The operation creates a Critical Illness Insurance Policy.<br />\r\n              Purpose: Allows for creation of Critical Illness Insurance Policies on a Fact Finder.",
+            "description": "Description: The operation creates a Critical Illness Insurance Policy.<br />\r\n              Purpose: Allows for creation of Critical Illness Insurance Policies on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CriticalIllnessInsurancePolicies_PostByModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CriticalIllnessInsurancePolicies_DeleteById": {
+            "main": "./lib/actions/CriticalIllnessInsurancePolicies_DeleteById.js",
+            "title": "Description: The operation removes a Critical Illness Insurance Policy tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Critical Illness Insurance Policy from a Fact Finder.",
+            "description": "Description: The operation removes a Critical Illness Insurance Policy tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Critical Illness Insurance Policy from a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CriticalIllnessInsurancePolicies_DeleteById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CriticalIllnessInsurancePolicies_GetById": {
+            "main": "./lib/actions/CriticalIllnessInsurancePolicies_GetById.js",
+            "title": "Description: This operation retrieves a single Critical Illness Insurance Policy for the specified Critical Illness Insurance Policy ID.<br />\r\n              Purpose: Provides access to the Critical Illness Insurance Policy including description and policy type.",
+            "description": "Description: This operation retrieves a single Critical Illness Insurance Policy for the specified Critical Illness Insurance Policy ID.<br />\r\n              Purpose: Provides access to the Critical Illness Insurance Policy including description and policy type.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CriticalIllnessInsurancePolicies_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CriticalIllnessInsurancePolicies_PutByIdModel": {
+            "main": "./lib/actions/CriticalIllnessInsurancePolicies_PutByIdModel.js",
+            "title": "Description: The operation updates a Critical Illness Insurance Policy.<br />\r\n              Purpose: Allows for complete replacement of a Critical Illness Insurance Policy on a Fact Finder.",
+            "description": "Description: The operation updates a Critical Illness Insurance Policy.<br />\r\n              Purpose: Allows for complete replacement of a Critical Illness Insurance Policy on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CriticalIllnessInsurancePolicies_PutByIdModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CriticalIllnessInsurancePolicyTypes_GetByCountry": {
+            "main": "./lib/actions/CriticalIllnessInsurancePolicyTypes_GetByCountry.js",
+            "title": "Description: This operation retrieves all Critical Illness Insurance Policy Types for the specified country.<br />\r\n              Purpose: Provides access to the Critical Illness Insurance Policy Types including id and type description.",
+            "description": "Description: This operation retrieves all Critical Illness Insurance Policy Types for the specified country.<br />\r\n              Purpose: Provides access to the Critical Illness Insurance Policy Types including id and type description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CriticalIllnessInsurancePolicyTypes_GetByCountry.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CriticalIllnessInsurancePolicyTypes_GetById": {
+            "main": "./lib/actions/CriticalIllnessInsurancePolicyTypes_GetById.js",
+            "title": "Description: This operation retrieves the Critical Illness Insurance Policy Type for the specified id.<br />\r\n              Purpose: Provides access to the Critical Illness Insurance Policy Types including id and type description.",
+            "description": "Description: This operation retrieves the Critical Illness Insurance Policy Type for the specified id.<br />\r\n              Purpose: Provides access to the Critical Illness Insurance Policy Types including id and type description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CriticalIllnessInsurancePolicyTypes_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DefinedBenefitPensions_GetDefinedBenefitPensionsByFactFinderIdByFactfinderid": {
+            "main": "./lib/actions/DefinedBenefitPensions_GetDefinedBenefitPensionsByFactFinderIdByFactfinderid.js",
+            "title": "Description: This operation retrieves all Defined Benefit Pensions for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Defined Benefit Pensions including description and start date.",
+            "description": "Description: This operation retrieves all Defined Benefit Pensions for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Defined Benefit Pensions including description and start date.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DefinedBenefitPensions_GetDefinedBenefitPensionsByFactFinderIdByFactfinderid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DefinedBenefitPensions_PostByModel": {
+            "main": "./lib/actions/DefinedBenefitPensions_PostByModel.js",
+            "title": "Description: The operation creates a Defined Benefit Pension.<br />\r\n              Purpose: Allows for creation of Defined Benefit Pensions on a Fact Finder.",
+            "description": "Description: The operation creates a Defined Benefit Pension.<br />\r\n              Purpose: Allows for creation of Defined Benefit Pensions on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DefinedBenefitPensions_PostByModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DefinedBenefitPensions_DeleteDefinedBenefitPensionById": {
+            "main": "./lib/actions/DefinedBenefitPensions_DeleteDefinedBenefitPensionById.js",
+            "title": "Description: The operation removes a Defined Benefit Pension tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Defined Benefit Pension from a Fact Finder.",
+            "description": "Description: The operation removes a Defined Benefit Pension tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Defined Benefit Pension from a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DefinedBenefitPensions_DeleteDefinedBenefitPensionById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DefinedBenefitPensions_GetById": {
+            "main": "./lib/actions/DefinedBenefitPensions_GetById.js",
+            "title": "Description: This operation retrieves a single Defined Benefit Pension for the specified Defined Benefit Pension ID.<br />\r\n              Purpose: Provides access to the Defined Benefit Pension including description and start date.",
+            "description": "Description: This operation retrieves a single Defined Benefit Pension for the specified Defined Benefit Pension ID.<br />\r\n              Purpose: Provides access to the Defined Benefit Pension including description and start date.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DefinedBenefitPensions_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DefinedBenefitPensions_PutDefinedBenefitPensionByIdModel": {
+            "main": "./lib/actions/DefinedBenefitPensions_PutDefinedBenefitPensionByIdModel.js",
+            "title": "Description: The operation updates a Defined Benefit Pension.<br />\r\n              Purpose: Allows for complete replacement of a Defined Benefit Pension on a Fact Finder.",
+            "description": "Description: The operation updates a Defined Benefit Pension.<br />\r\n              Purpose: Allows for complete replacement of a Defined Benefit Pension on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DefinedBenefitPensions_PutDefinedBenefitPensionByIdModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Demographics_GetDemographicsByFactFinderIdByFactfinderid": {
+            "main": "./lib/actions/Demographics_GetDemographicsByFactFinderIdByFactfinderid.js",
+            "title": "Description: This operation retrieves all Demographic information for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Demographic information including city and state.",
+            "description": "Description: This operation retrieves all Demographic information for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Demographic information including city and state.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Demographics_GetDemographicsByFactFinderIdByFactfinderid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Demographics_PostByModel": {
+            "main": "./lib/actions/Demographics_PostByModel.js",
+            "title": "Description: The operation creates Demographic information.<br />\r\n              Purpose: Allows for creation of Demographic information on a Fact Finder.",
+            "description": "Description: The operation creates Demographic information.<br />\r\n              Purpose: Allows for creation of Demographic information on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Demographics_PostByModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Demographics_GetDependentsByDemographicid": {
+            "main": "./lib/actions/Demographics_GetDependentsByDemographicid.js",
+            "title": "Description: This operation retrieves all Dependents for the specified Demographic information ID.<br />\r\n              Purpose: Provides access to the Dependents including first and last name.",
+            "description": "Description: This operation retrieves all Dependents for the specified Demographic information ID.<br />\r\n              Purpose: Provides access to the Dependents including first and last name.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Demographics_GetDependentsByDemographicid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Demographics_PostByDemographicidModel": {
+            "main": "./lib/actions/Demographics_PostByDemographicidModel.js",
+            "title": "Description: The operation creates a Dependent.<br />\r\n              Purpose: Allows for creation of Dependents on a Fact Finder.",
+            "description": "Description: The operation creates a Dependent.<br />\r\n              Purpose: Allows for creation of Dependents on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Demographics_PostByDemographicidModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Demographics_DeleteDependentByDemographicidId": {
+            "main": "./lib/actions/Demographics_DeleteDependentByDemographicidId.js",
+            "title": "Description: The operation removes a Dependent tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Dependent from a Fact Finder.",
+            "description": "Description: The operation removes a Dependent tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Dependent from a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Demographics_DeleteDependentByDemographicidId.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Demographics_GetDependentByDemographicidId": {
+            "main": "./lib/actions/Demographics_GetDependentByDemographicidId.js",
+            "title": "Description: This operation retrieves a single Dependent for the specified Dependent ID.<br />\r\n              Purpose: Provides access to the Dependent including first and last name.",
+            "description": "Description: This operation retrieves a single Dependent for the specified Dependent ID.<br />\r\n              Purpose: Provides access to the Dependent including first and last name.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Demographics_GetDependentByDemographicidId.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Demographics_PutByDemographicidIdModel": {
+            "main": "./lib/actions/Demographics_PutByDemographicidIdModel.js",
+            "title": "Description: The operation updates a Dependent.<br />\r\n              Purpose: Allows for complete replacement of a Dependent on a Fact Finder.",
+            "description": "Description: The operation updates a Dependent.<br />\r\n              Purpose: Allows for complete replacement of a Dependent on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Demographics_PutByDemographicidIdModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Demographics_GetById": {
+            "main": "./lib/actions/Demographics_GetById.js",
+            "title": "Description: This operation retrieves Demographic information for the specified Demographic information ID.<br />\r\n              Purpose: Provides access to the Demographic information including city and state.",
+            "description": "Description: This operation retrieves Demographic information for the specified Demographic information ID.<br />\r\n              Purpose: Provides access to the Demographic information including city and state.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Demographics_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Demographics_PutByIdModel": {
+            "main": "./lib/actions/Demographics_PutByIdModel.js",
+            "title": "Description: The operation updates Demographic information.<br />\r\n              Purpose: Allows for complete replacement of Demographic information on a Fact Finder.",
+            "description": "Description: The operation updates Demographic information.<br />\r\n              Purpose: Allows for complete replacement of Demographic information on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Demographics_PutByIdModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DisabilityInsurancePolicies_GetDisabilityInsurancePoliciesByFactFinderIdByFactfinderid": {
+            "main": "./lib/actions/DisabilityInsurancePolicies_GetDisabilityInsurancePoliciesByFactFinderIdByFactfinderid.js",
+            "title": "Description: This operation retrieves all Disability Insurance Policies for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Disability Insurance Policies including description and policy type.",
+            "description": "Description: This operation retrieves all Disability Insurance Policies for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Disability Insurance Policies including description and policy type.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DisabilityInsurancePolicies_GetDisabilityInsurancePoliciesByFactFinderIdByFactfinderid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DisabilityInsurancePolicies_PostByModel": {
+            "main": "./lib/actions/DisabilityInsurancePolicies_PostByModel.js",
+            "title": "Description: The operation creates a Disability Insurance Policy.<br />\r\n              Purpose: Allows for creation of Disability Insurance Policies on a Fact Finder.",
+            "description": "Description: The operation creates a Disability Insurance Policy.<br />\r\n              Purpose: Allows for creation of Disability Insurance Policies on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DisabilityInsurancePolicies_PostByModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DisabilityInsurancePolicies_DeleteById": {
+            "main": "./lib/actions/DisabilityInsurancePolicies_DeleteById.js",
+            "title": "Description: The operation removes a Disability Insurance Policy tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Disability Insurance Policy from a Fact Finder.",
+            "description": "Description: The operation removes a Disability Insurance Policy tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Disability Insurance Policy from a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DisabilityInsurancePolicies_DeleteById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DisabilityInsurancePolicies_GetById": {
+            "main": "./lib/actions/DisabilityInsurancePolicies_GetById.js",
+            "title": "Description: This operation retrieves a single Disability Insurance Policy for the specified Disability Insurance Policy ID.<br />\r\n              Purpose: Provides access to the Disability Insurance Policy including description and policy type.",
+            "description": "Description: This operation retrieves a single Disability Insurance Policy for the specified Disability Insurance Policy ID.<br />\r\n              Purpose: Provides access to the Disability Insurance Policy including description and policy type.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DisabilityInsurancePolicies_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DisabilityInsurancePolicies_PutByIdModel": {
+            "main": "./lib/actions/DisabilityInsurancePolicies_PutByIdModel.js",
+            "title": "Description: The operation updates a Disability Insurance Policy.<br />\r\n              Purpose: Allows for complete replacement of a Disability Insurance Policy on a Fact Finder.",
+            "description": "Description: The operation updates a Disability Insurance Policy.<br />\r\n              Purpose: Allows for complete replacement of a Disability Insurance Policy on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DisabilityInsurancePolicies_PutByIdModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DisabilityInsurancePolicyTypes_GetByCountry": {
+            "main": "./lib/actions/DisabilityInsurancePolicyTypes_GetByCountry.js",
+            "title": "Description: This operation retrieves all Disability Insurance Policy Types for the specified country.<br />\r\n              Purpose: Provides access to the Disability Insurance Policy Types including id and type description.",
+            "description": "Description: This operation retrieves all Disability Insurance Policy Types for the specified country.<br />\r\n              Purpose: Provides access to the Disability Insurance Policy Types including id and type description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DisabilityInsurancePolicyTypes_GetByCountry.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DisabilityInsurancePolicyTypes_GetById": {
+            "main": "./lib/actions/DisabilityInsurancePolicyTypes_GetById.js",
+            "title": "Description: This operation retrieves all Disability Insurance Policy Types for the specified id.<br />\r\n              Purpose: Provides access to the Disability Insurance Policy Types including id and type description.",
+            "description": "Description: This operation retrieves all Disability Insurance Policy Types for the specified id.<br />\r\n              Purpose: Provides access to the Disability Insurance Policy Types including id and type description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DisabilityInsurancePolicyTypes_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "EducationGoals_GetEducationGoalsByFactFinderIdByFactfinderid": {
+            "main": "./lib/actions/EducationGoals_GetEducationGoalsByFactFinderIdByFactfinderid.js",
+            "title": "Description: This operation retrieves all Education Goals for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Education Goals including description and projected cost.",
+            "description": "Description: This operation retrieves all Education Goals for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Education Goals including description and projected cost.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/EducationGoals_GetEducationGoalsByFactFinderIdByFactfinderid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "EducationGoals_PostByModel": {
+            "main": "./lib/actions/EducationGoals_PostByModel.js",
+            "title": "Description: The operation creates an Education Goal.<br />\r\n              Purpose: Allows for creation of Education Goals on a Fact Finder.",
+            "description": "Description: The operation creates an Education Goal.<br />\r\n              Purpose: Allows for creation of Education Goals on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/EducationGoals_PostByModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "EducationGoals_GetEducationExpensesByEducationGoalIdByEducationgoalid": {
+            "main": "./lib/actions/EducationGoals_GetEducationExpensesByEducationGoalIdByEducationgoalid.js",
+            "title": "Description: This operation retrieves all Education Goal Expenses for the specified Education Goal ID.<br />\r\n              Purpose: Provides access to the Education Goal Expenses including description and annual cost.",
+            "description": "Description: This operation retrieves all Education Goal Expenses for the specified Education Goal ID.<br />\r\n              Purpose: Provides access to the Education Goal Expenses including description and annual cost.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/EducationGoals_GetEducationExpensesByEducationGoalIdByEducationgoalid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "EducationGoals_PostByEducationgoalidModel": {
+            "main": "./lib/actions/EducationGoals_PostByEducationgoalidModel.js",
+            "title": "Description: The operation creates an Education Goal Expense.<br />\r\n              Purpose: Allows for creation of Education Goal Expenses on a Fact Finder.",
+            "description": "Description: The operation creates an Education Goal Expense.<br />\r\n              Purpose: Allows for creation of Education Goal Expenses on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/EducationGoals_PostByEducationgoalidModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "EducationGoals_DeleteByEducationgoalidId": {
+            "main": "./lib/actions/EducationGoals_DeleteByEducationgoalidId.js",
+            "title": "Description: The operation removes an Education Goal Expense tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of an Education Goal Expense from a Fact Finder.",
+            "description": "Description: The operation removes an Education Goal Expense tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of an Education Goal Expense from a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/EducationGoals_DeleteByEducationgoalidId.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "EducationGoals_GetEducationExpenseByEducationgoalidId": {
+            "main": "./lib/actions/EducationGoals_GetEducationExpenseByEducationgoalidId.js",
+            "title": "Description: This operation retrieves a single Education Goal Expense for the specified Education Goal Expense ID.<br />\r\n              Purpose: Provides access to the Education Goal Expense including description and annual cost.",
+            "description": "Description: This operation retrieves a single Education Goal Expense for the specified Education Goal Expense ID.<br />\r\n              Purpose: Provides access to the Education Goal Expense including description and annual cost.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/EducationGoals_GetEducationExpenseByEducationgoalidId.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "EducationGoals_PutByEducationgoalidIdModel": {
+            "main": "./lib/actions/EducationGoals_PutByEducationgoalidIdModel.js",
+            "title": "Description: The operation updates an Education Goal Expense.<br />\r\n              Purpose: Allows for complete replacement of an Education Goal Expense on a Fact Finder.",
+            "description": "Description: The operation updates an Education Goal Expense.<br />\r\n              Purpose: Allows for complete replacement of an Education Goal Expense on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/EducationGoals_PutByEducationgoalidIdModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "EducationGoals_DeleteById": {
+            "main": "./lib/actions/EducationGoals_DeleteById.js",
+            "title": "Description: The operation removes an Education Goal tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of an Education Goal from a Fact Finder.",
+            "description": "Description: The operation removes an Education Goal tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of an Education Goal from a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/EducationGoals_DeleteById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "EducationGoals_GetById": {
+            "main": "./lib/actions/EducationGoals_GetById.js",
+            "title": "Description: This operation retrieves a single Education Goal for the specified Education Goal ID.<br />\r\n              Purpose: Provides access to the Education Goal including description and projected cost.",
+            "description": "Description: This operation retrieves a single Education Goal for the specified Education Goal ID.<br />\r\n              Purpose: Provides access to the Education Goal including description and projected cost.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/EducationGoals_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "EducationGoals_PutByIdModel": {
+            "main": "./lib/actions/EducationGoals_PutByIdModel.js",
+            "title": "Description: The operation creates an Education Goal Expense.<br />\r\n              Purpose: Allows for creation of Education Goal Expenses on a Fact Finder.",
+            "description": "Description: The operation creates an Education Goal Expense.<br />\r\n              Purpose: Allows for creation of Education Goal Expenses on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/EducationGoals_PutByIdModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ExpenseTypes_GetByCountry": {
+            "main": "./lib/actions/ExpenseTypes_GetByCountry.js",
+            "title": "Description: This operation retrieves all Expense Types for the specified country.<br />\r\n              Purpose: Provides access to the Expense Types including id and type description.",
+            "description": "Description: This operation retrieves all Expense Types for the specified country.<br />\r\n              Purpose: Provides access to the Expense Types including id and type description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ExpenseTypes_GetByCountry.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ExpenseTypes_GetById": {
+            "main": "./lib/actions/ExpenseTypes_GetById.js",
+            "title": "Description: This operation retrieves all Expense Types for the specified country.<br />\r\n              Purpose: Provides access to the Expense Types including id and type description.",
+            "description": "Description: This operation retrieves all Expense Types for the specified country.<br />\r\n              Purpose: Provides access to the Expense Types including id and type description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ExpenseTypes_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Expenses_GetExpensesByFactFinderIdByFactfinderid": {
+            "main": "./lib/actions/Expenses_GetExpensesByFactFinderIdByFactfinderid.js",
+            "title": "Description: This operation retrieves all Expenses for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Expenses including description and Expense type.",
+            "description": "Description: This operation retrieves all Expenses for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Expenses including description and Expense type.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Expenses_GetExpensesByFactFinderIdByFactfinderid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Expenses_PostByModel": {
+            "main": "./lib/actions/Expenses_PostByModel.js",
+            "title": "Description: The operation creates an Expense.<br />\r\n              Purpose: Allows for creation of Expenses on a Fact Finder.",
+            "description": "Description: The operation creates an Expense.<br />\r\n              Purpose: Allows for creation of Expenses on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Expenses_PostByModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Expenses_DeleteById": {
+            "main": "./lib/actions/Expenses_DeleteById.js",
+            "title": "Description: The operation removes an Expense tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of an Expense from a Fact Finder.",
+            "description": "Description: The operation removes an Expense tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of an Expense from a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Expenses_DeleteById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Expenses_GetById": {
+            "main": "./lib/actions/Expenses_GetById.js",
+            "title": "Description: This operation retrieves a single Expense for the specified Expense ID.<br />\r\n              Purpose: Provides access to the Expense including description and Expense type.",
+            "description": "Description: This operation retrieves a single Expense for the specified Expense ID.<br />\r\n              Purpose: Provides access to the Expense including description and Expense type.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Expenses_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Expenses_PutByIdModel": {
+            "main": "./lib/actions/Expenses_PutByIdModel.js",
+            "title": "Description: The operation updates an Expense.<br />\r\n              Purpose: Allows for complete replacement of an Expense on a Fact Finder.",
+            "description": "Description: The operation updates an Expense.<br />\r\n              Purpose: Allows for complete replacement of an Expense on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Expenses_PutByIdModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "FactFinders_PostByModel": {
+            "main": "./lib/actions/FactFinders_PostByModel.js",
+            "title": "Description: The operation creates a Fact Finder.<br />\r\n              Purpose: Allows for creation of Fact Finders.",
+            "description": "Description: The operation creates a Fact Finder.<br />\r\n              Purpose: Allows for creation of Fact Finders.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/FactFinders_PostByModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "FactFinderModules_GetByFactfinderid": {
+            "main": "./lib/actions/FactFinderModules_GetByFactfinderid.js",
+            "title": "Description: This operation retrieves all Fact Finder Modules for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Fact Finder Modules including description and policy type.",
+            "description": "Description: This operation retrieves all Fact Finder Modules for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Fact Finder Modules including description and policy type.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/FactFinderModules_GetByFactfinderid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "FactFinderModules_GetByFactfinderidId": {
+            "main": "./lib/actions/FactFinderModules_GetByFactfinderidId.js",
+            "title": "Description: This operation retrieves a single Fact Finder Module for the specified Fact Finder Module ID.<br />\r\n              Purpose: Provides access to the Fact Finder Module including description and policy type.",
+            "description": "Description: This operation retrieves a single Fact Finder Module for the specified Fact Finder Module ID.<br />\r\n              Purpose: Provides access to the Fact Finder Module including description and policy type.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/FactFinderModules_GetByFactfinderidId.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "FactFinderModules_PutByModelFactfinderidId": {
+            "main": "./lib/actions/FactFinderModules_PutByModelFactfinderidId.js",
+            "title": "Description: The operation updates a Fact Finder Module.<br />\r\n              Purpose: Allows for complete replacement of a Fact Finder Module on a Fact Finder.",
+            "description": "Description: The operation updates a Fact Finder Module.<br />\r\n              Purpose: Allows for complete replacement of a Fact Finder Module on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/FactFinderModules_PutByModelFactfinderidId.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "FactFinders_GetById": {
+            "main": "./lib/actions/FactFinders_GetById.js",
+            "title": "Description: This operation retrieves a single Fact Finder for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Fact Finder including status.",
+            "description": "Description: This operation retrieves a single Fact Finder for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Fact Finder including status.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/FactFinders_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "FactFinders_PutByIdModel": {
+            "main": "./lib/actions/FactFinders_PutByIdModel.js",
+            "title": "Description: The operation updates a Fact Finder.<br />\r\n              Purpose: Allows for the updating of a Fact Finder.",
+            "description": "Description: The operation updates a Fact Finder.<br />\r\n              Purpose: Allows for the updating of a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/FactFinders_PutByIdModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "FactFinders_PostById": {
+            "main": "./lib/actions/FactFinders_PostById.js",
+            "title": "Description: The operation produces a Fact Finder based on input from a back office system.<br />\r\n              Purpose: Allows for advisors to compare the fact finder to the old plan prior to acceptance.",
+            "description": "Description: The operation produces a Fact Finder based on input from a back office system.<br />\r\n              Purpose: Allows for advisors to compare the fact finder to the old plan prior to acceptance.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/FactFinders_PostById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "FilingStatusTypes_GetByCountry": {
+            "main": "./lib/actions/FilingStatusTypes_GetByCountry.js",
+            "title": "Description: This operation retrieves all Filing Status Types for the specified country.<br />\r\n              Purpose: Provides access to the Filing Status Types including id and type description.",
+            "description": "Description: This operation retrieves all Filing Status Types for the specified country.<br />\r\n              Purpose: Provides access to the Filing Status Types including id and type description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/FilingStatusTypes_GetByCountry.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "FilingStatusTypes_GetById": {
+            "main": "./lib/actions/FilingStatusTypes_GetById.js",
+            "title": "Description: This operation retrieves all Filing Status Type for the specified id.<br />\r\n              Purpose: Provides access to the Filing Status Types including id and type description.",
+            "description": "Description: This operation retrieves all Filing Status Type for the specified id.<br />\r\n              Purpose: Provides access to the Filing Status Types including id and type description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/FilingStatusTypes_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "FrequencyTypes_GetByEntityCountry": {
+            "main": "./lib/actions/FrequencyTypes_GetByEntityCountry.js",
+            "title": "Description: This operation retrieves all Frequency Types for the specified country and entity.<br />\r\n              Purpose: Provides access to the Frequency Types including id and type description.",
+            "description": "Description: This operation retrieves all Frequency Types for the specified country and entity.<br />\r\n              Purpose: Provides access to the Frequency Types including id and type description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/FrequencyTypes_GetByEntityCountry.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "FrequencyTypes_GetById": {
+            "main": "./lib/actions/FrequencyTypes_GetById.js",
+            "title": "Description: This operation retrieves the Frequency Type for the specified id.<br />\r\n              Purpose: Provides access to the Frequency Types including id and type description.",
+            "description": "Description: This operation retrieves the Frequency Type for the specified id.<br />\r\n              Purpose: Provides access to the Frequency Types including id and type description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/FrequencyTypes_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IncomeTypes_GetByCountry": {
+            "main": "./lib/actions/IncomeTypes_GetByCountry.js",
+            "title": "Description: This operation retrieves all Income Types for the specified country.<br />\r\n              Purpose: Provides access to the Income Types including id and type description.",
+            "description": "Description: This operation retrieves all Income Types for the specified country.<br />\r\n              Purpose: Provides access to the Income Types including id and type description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IncomeTypes_GetByCountry.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "IncomeTypes_GetById": {
+            "main": "./lib/actions/IncomeTypes_GetById.js",
+            "title": "Description: This operation retrieves the Income Type for the specified id.<br />\r\n              Purpose: Provides access to the Income Types including id and type description.",
+            "description": "Description: This operation retrieves the Income Type for the specified id.<br />\r\n              Purpose: Provides access to the Income Types including id and type description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/IncomeTypes_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Incomes_GetIncomesByFactFinderIdByFactfinderid": {
+            "main": "./lib/actions/Incomes_GetIncomesByFactFinderIdByFactfinderid.js",
+            "title": "Description: This operation retrieves all Incomes for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Incomes including annual amount and start date.",
+            "description": "Description: This operation retrieves all Incomes for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Incomes including annual amount and start date.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Incomes_GetIncomesByFactFinderIdByFactfinderid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Incomes_PostByModel": {
+            "main": "./lib/actions/Incomes_PostByModel.js",
+            "title": "Description: The operation creates an Income.<br />\r\n              Purpose: Allows for creation of Incomes on a Fact Finder.",
+            "description": "Description: The operation creates an Income.<br />\r\n              Purpose: Allows for creation of Incomes on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Incomes_PostByModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Incomes_DeleteById": {
+            "main": "./lib/actions/Incomes_DeleteById.js",
+            "title": "Description: The operation removes an Income tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of an Income from a Fact Finder.",
+            "description": "Description: The operation removes an Income tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of an Income from a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Incomes_DeleteById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Incomes_GetById": {
+            "main": "./lib/actions/Incomes_GetById.js",
+            "title": "Description: This operation retrieves a single Income for the specified Income ID.<br />\r\n              Purpose: Provides access to the Income including annual amount and start date.",
+            "description": "Description: This operation retrieves a single Income for the specified Income ID.<br />\r\n              Purpose: Provides access to the Income including annual amount and start date.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Incomes_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Incomes_PutByIdModel": {
+            "main": "./lib/actions/Incomes_PutByIdModel.js",
+            "title": "Description: The operation updates an Income.<br />\r\n              Purpose: Allows for complete replacement of an Income on a Fact Finder.",
+            "description": "Description: The operation updates an Income.<br />\r\n              Purpose: Allows for complete replacement of an Income on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Incomes_PutByIdModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Liabilities_GetLiabilitiesByFactFinderIdByFactfinderidExternalsourceid": {
+            "main": "./lib/actions/Liabilities_GetLiabilitiesByFactFinderIdByFactfinderidExternalsourceid.js",
+            "title": "Description: This operation retrieves all Liabilities for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Liabilities including owner and type.",
+            "description": "Description: This operation retrieves all Liabilities for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Liabilities including owner and type.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Liabilities_GetLiabilitiesByFactFinderIdByFactfinderidExternalsourceid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Liabilities_PostByModel": {
+            "main": "./lib/actions/Liabilities_PostByModel.js",
+            "title": "Description: The operation creates a Liability.<br />\r\n              Purpose: Allows for creation of Liabilities on a Fact Finder.",
+            "description": "Description: The operation creates a Liability.<br />\r\n              Purpose: Allows for creation of Liabilities on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Liabilities_PostByModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Liabilities_DeleteById": {
+            "main": "./lib/actions/Liabilities_DeleteById.js",
+            "title": "Description: The operation removes a Liability tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Liability from a Fact Finder.",
+            "description": "Description: The operation removes a Liability tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Liability from a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Liabilities_DeleteById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Liabilities_GetById": {
+            "main": "./lib/actions/Liabilities_GetById.js",
+            "title": "Description: This operation retrieves a single Liability for the specified Liability ID.<br />\r\n              Purpose: Provides access to the Liability including owner and type.",
+            "description": "Description: This operation retrieves a single Liability for the specified Liability ID.<br />\r\n              Purpose: Provides access to the Liability including owner and type.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Liabilities_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Liabilities_PutByIdModel": {
+            "main": "./lib/actions/Liabilities_PutByIdModel.js",
+            "title": "Description: The operation updates a Liability.<br />\r\n              Purpose: Allows for complete replacement of a Liability on a Fact Finder.",
+            "description": "Description: The operation updates a Liability.<br />\r\n              Purpose: Allows for complete replacement of a Liability on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Liabilities_PutByIdModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LiabilityTypes_GetByCountry": {
+            "main": "./lib/actions/LiabilityTypes_GetByCountry.js",
+            "title": "Description: This operation retrieves all Liability Types for the specified country.<br />\r\n              Purpose: Provides access to the Liability Types including id and type description.",
+            "description": "Description: This operation retrieves all Liability Types for the specified country.<br />\r\n              Purpose: Provides access to the Liability Types including id and type description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LiabilityTypes_GetByCountry.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LiabilityTypes_GetById": {
+            "main": "./lib/actions/LiabilityTypes_GetById.js",
+            "title": "Description: This operation retrieves the Liability Type for the specified id.<br />\r\n              Purpose: Provides access to the Liability Types including id and type description.",
+            "description": "Description: This operation retrieves the Liability Type for the specified id.<br />\r\n              Purpose: Provides access to the Liability Types including id and type description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LiabilityTypes_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LifeInsurancePolicies_GetLifeInsurancePoliciesByFactFinderIdByFactfinderid": {
+            "main": "./lib/actions/LifeInsurancePolicies_GetLifeInsurancePoliciesByFactFinderIdByFactfinderid.js",
+            "title": "Description: This operation retrieves all Life Insurance Policies for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Life Insurance Policies including description and policy type.",
+            "description": "Description: This operation retrieves all Life Insurance Policies for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Life Insurance Policies including description and policy type.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LifeInsurancePolicies_GetLifeInsurancePoliciesByFactFinderIdByFactfinderid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LifeInsurancePolicies_PostByModel": {
+            "main": "./lib/actions/LifeInsurancePolicies_PostByModel.js",
+            "title": "Description: The operation creates a Life Insurance Policy.<br />\r\n              Purpose: Allows for creation of Life Insurance Policies on a Fact Finder.",
+            "description": "Description: The operation creates a Life Insurance Policy.<br />\r\n              Purpose: Allows for creation of Life Insurance Policies on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LifeInsurancePolicies_PostByModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LifeInsurancePolicies_DeleteById": {
+            "main": "./lib/actions/LifeInsurancePolicies_DeleteById.js",
+            "title": "Description: The operation removes a Life Insurance Policy tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Life Insurance Policy from a Fact Finder.",
+            "description": "Description: The operation removes a Life Insurance Policy tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Life Insurance Policy from a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LifeInsurancePolicies_DeleteById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LifeInsurancePolicies_GetById": {
+            "main": "./lib/actions/LifeInsurancePolicies_GetById.js",
+            "title": "Description: This operation retrieves a single Life Insurance Policy for the specified Life Insurance Policy ID.<br />\r\n              Purpose: Provides access to the Life Insurance Policy including description and policy type.",
+            "description": "Description: This operation retrieves a single Life Insurance Policy for the specified Life Insurance Policy ID.<br />\r\n              Purpose: Provides access to the Life Insurance Policy including description and policy type.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LifeInsurancePolicies_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LifeInsurancePolicies_PutByIdModel": {
+            "main": "./lib/actions/LifeInsurancePolicies_PutByIdModel.js",
+            "title": "Description: The operation updates a Life Insurance Policy.<br />\r\n              Purpose: Allows for complete replacement of a Life Insurance Policy on a Fact Finder.",
+            "description": "Description: The operation updates a Life Insurance Policy.<br />\r\n              Purpose: Allows for complete replacement of a Life Insurance Policy on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LifeInsurancePolicies_PutByIdModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LifeInsurancePolicyTypes_GetByCountry": {
+            "main": "./lib/actions/LifeInsurancePolicyTypes_GetByCountry.js",
+            "title": "Description: This operation retrieves all Life Insurance Policy Types for the specified country.<br />\r\n              Purpose: Provides access to the Life Insurance Policy Types including id and type description.",
+            "description": "Description: This operation retrieves all Life Insurance Policy Types for the specified country.<br />\r\n              Purpose: Provides access to the Life Insurance Policy Types including id and type description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LifeInsurancePolicyTypes_GetByCountry.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LifeInsurancePolicyTypes_GetById": {
+            "main": "./lib/actions/LifeInsurancePolicyTypes_GetById.js",
+            "title": "Description: This operation retrieves the Life Insurance Policy Type for the specified id.<br />\r\n              Purpose: Provides access to the Life Insurance Policy Types including id and type description.",
+            "description": "Description: This operation retrieves the Life Insurance Policy Type for the specified id.<br />\r\n              Purpose: Provides access to the Life Insurance Policy Types including id and type description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LifeInsurancePolicyTypes_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LifestyleAssetTypes_GetByCountry": {
+            "main": "./lib/actions/LifestyleAssetTypes_GetByCountry.js",
+            "title": "Description: This operation retrieves all Lifestyle Asset Types for the specified country.<br />\r\n              Purpose: Provides access to the Lifestyle Asset Types including id and type description.",
+            "description": "Description: This operation retrieves all Lifestyle Asset Types for the specified country.<br />\r\n              Purpose: Provides access to the Lifestyle Asset Types including id and type description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LifestyleAssetTypes_GetByCountry.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LifestyleAssetTypes_GetById": {
+            "main": "./lib/actions/LifestyleAssetTypes_GetById.js",
+            "title": "Description: This operation retrieves the Lifestyle Asset Type for the specified id.<br />\r\n              Purpose: Provides access to the Lifestyle Asset Types including id and type description.",
+            "description": "Description: This operation retrieves the Lifestyle Asset Type for the specified id.<br />\r\n              Purpose: Provides access to the Lifestyle Asset Types including id and type description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LifestyleAssetTypes_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LifestyleAssets_GetLifestyleAssetsByFactFinderIdByFactfinderid": {
+            "main": "./lib/actions/LifestyleAssets_GetLifestyleAssetsByFactFinderIdByFactfinderid.js",
+            "title": "Description: This operation retrieves all Lifestyle Assets for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Lifestyle Assets including description and market value.",
+            "description": "Description: This operation retrieves all Lifestyle Assets for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Lifestyle Assets including description and market value.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LifestyleAssets_GetLifestyleAssetsByFactFinderIdByFactfinderid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LifestyleAssets_PostByModel": {
+            "main": "./lib/actions/LifestyleAssets_PostByModel.js",
+            "title": "Description: The operation creates a Lifestyle Asset.<br />\r\n              Purpose: Allows for creation of Lifestyle Assets on a Fact Finder.",
+            "description": "Description: The operation creates a Lifestyle Asset.<br />\r\n              Purpose: Allows for creation of Lifestyle Assets on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LifestyleAssets_PostByModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LifestyleAssets_DeleteById": {
+            "main": "./lib/actions/LifestyleAssets_DeleteById.js",
+            "title": "Description: The operation removes a Lifestyle Asset tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Lifestyle Asset from a Fact Finder.",
+            "description": "Description: The operation removes a Lifestyle Asset tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Lifestyle Asset from a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LifestyleAssets_DeleteById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LifestyleAssets_GetById": {
+            "main": "./lib/actions/LifestyleAssets_GetById.js",
+            "title": "Description: This operation retrieves a single Lifestyle Asset for the specified Lifestyle Asset ID.<br />\r\n              Purpose: Provides access to the Lifestyle Asset including description and market value.",
+            "description": "Description: This operation retrieves a single Lifestyle Asset for the specified Lifestyle Asset ID.<br />\r\n              Purpose: Provides access to the Lifestyle Asset including description and market value.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LifestyleAssets_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LifestyleAssets_PutByIdModel": {
+            "main": "./lib/actions/LifestyleAssets_PutByIdModel.js",
+            "title": "Description: The operation updates a Lifestyle Asset.<br />\r\n              Purpose: Allows for complete replacement of a Lifestyle Asset on a Fact Finder.",
+            "description": "Description: The operation updates a Lifestyle Asset.<br />\r\n              Purpose: Allows for complete replacement of a Lifestyle Asset on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LifestyleAssets_PutByIdModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LongTermCareInsurancePolicies_GetLongTermCareInsurancePoliciesByFactFinderIdByFactfinderid": {
+            "main": "./lib/actions/LongTermCareInsurancePolicies_GetLongTermCareInsurancePoliciesByFactFinderIdByFactfinderid.js",
+            "title": "Description: This operation retrieves all Long Term Care Insurance Policies for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Long Term Care Insurance Policies including description and premium.",
+            "description": "Description: This operation retrieves all Long Term Care Insurance Policies for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Long Term Care Insurance Policies including description and premium.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LongTermCareInsurancePolicies_GetLongTermCareInsurancePoliciesByFactFinderIdByFactfinderid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LongTermCareInsurancePolicies_PostByModel": {
+            "main": "./lib/actions/LongTermCareInsurancePolicies_PostByModel.js",
+            "title": "Description: The operation creates a Long Term Care Insurance Policy.<br />\r\n              Purpose: Allows for creation of Long Term Care Insurance Policies on a Fact Finder.",
+            "description": "Description: The operation creates a Long Term Care Insurance Policy.<br />\r\n              Purpose: Allows for creation of Long Term Care Insurance Policies on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LongTermCareInsurancePolicies_PostByModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LongTermCareInsurancePolicies_DeleteById": {
+            "main": "./lib/actions/LongTermCareInsurancePolicies_DeleteById.js",
+            "title": "Description: The operation removes a Long Term Care Insurance Policy tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Long Term Care Insurance Policy from a Fact Finder.",
+            "description": "Description: The operation removes a Long Term Care Insurance Policy tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Long Term Care Insurance Policy from a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LongTermCareInsurancePolicies_DeleteById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LongTermCareInsurancePolicies_GetById": {
+            "main": "./lib/actions/LongTermCareInsurancePolicies_GetById.js",
+            "title": "Description: This operation retrieves a single Long Term Care Insurance Policy for the specified Long Term Care Insurance Policy ID.<br />\r\n              Purpose: Provides access to the Long Term Care Insurance Policy including description and premium.",
+            "description": "Description: This operation retrieves a single Long Term Care Insurance Policy for the specified Long Term Care Insurance Policy ID.<br />\r\n              Purpose: Provides access to the Long Term Care Insurance Policy including description and premium.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LongTermCareInsurancePolicies_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LongTermCareInsurancePolicies_PutByIdModel": {
+            "main": "./lib/actions/LongTermCareInsurancePolicies_PutByIdModel.js",
+            "title": "Description: The operation updates a Long Term Care Insurance Policy.<br />\r\n              Purpose: Allows for complete replacement of a Long Term Care Insurance Policy on a Fact Finder.",
+            "description": "Description: The operation updates a Long Term Care Insurance Policy.<br />\r\n              Purpose: Allows for complete replacement of a Long Term Care Insurance Policy on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LongTermCareInsurancePolicies_PutByIdModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MajorPurchaseGoalTypes_GetByCountry": {
+            "main": "./lib/actions/MajorPurchaseGoalTypes_GetByCountry.js",
+            "title": "Description: This operation retrieves all Major Purchase Goal Types for the specified country.<br />\r\n              Purpose: Provides access to the Major Purchase Goal Types including id and type description.",
+            "description": "Description: This operation retrieves all Major Purchase Goal Types for the specified country.<br />\r\n              Purpose: Provides access to the Major Purchase Goal Types including id and type description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MajorPurchaseGoalTypes_GetByCountry.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MajorPurchaseGoalTypes_GetById": {
+            "main": "./lib/actions/MajorPurchaseGoalTypes_GetById.js",
+            "title": "Description: This operation retrieves the Major Purchase Goal Type for the specified id.<br />\r\n              Purpose: Provides access to the Major Purchase Goal Types including id and type description.",
+            "description": "Description: This operation retrieves the Major Purchase Goal Type for the specified id.<br />\r\n              Purpose: Provides access to the Major Purchase Goal Types including id and type description.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MajorPurchaseGoalTypes_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MajorPurchaseGoals_GetMajorPurchaseGoalsByFactFinderIdByFactfinderid": {
+            "main": "./lib/actions/MajorPurchaseGoals_GetMajorPurchaseGoalsByFactFinderIdByFactfinderid.js",
+            "title": "Description: This operation retrieves all Major Purchases for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Major Purchases including description and amount.",
+            "description": "Description: This operation retrieves all Major Purchases for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Major Purchases including description and amount.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MajorPurchaseGoals_GetMajorPurchaseGoalsByFactFinderIdByFactfinderid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MajorPurchaseGoals_PostByModel": {
+            "main": "./lib/actions/MajorPurchaseGoals_PostByModel.js",
+            "title": "Description: The operation creates a Major Purchase.<br />\r\n              Purpose: Allows for creation of Major Purchases on a Fact Finder.",
+            "description": "Description: The operation creates a Major Purchase.<br />\r\n              Purpose: Allows for creation of Major Purchases on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MajorPurchaseGoals_PostByModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MajorPurchaseGoals_DeleteById": {
+            "main": "./lib/actions/MajorPurchaseGoals_DeleteById.js",
+            "title": "Description: The operation removes a Major Purchase tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Major Purchase from a Fact Finder.",
+            "description": "Description: The operation removes a Major Purchase tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Major Purchase from a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MajorPurchaseGoals_DeleteById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MajorPurchaseGoals_GetById": {
+            "main": "./lib/actions/MajorPurchaseGoals_GetById.js",
+            "title": "Description: This operation retrieves a single Major Purchase for the specified Major Purchase ID.<br />\r\n              Purpose: Provides access to the Major Purchase including description and amount.",
+            "description": "Description: This operation retrieves a single Major Purchase for the specified Major Purchase ID.<br />\r\n              Purpose: Provides access to the Major Purchase including description and amount.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MajorPurchaseGoals_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MajorPurchaseGoals_PutByIdModel": {
+            "main": "./lib/actions/MajorPurchaseGoals_PutByIdModel.js",
+            "title": "Description: The operation updates a Major Purchase.<br />\r\n              Purpose: Allows for complete replacement of a Major Purchase on a Fact Finder.",
+            "description": "Description: The operation updates a Major Purchase.<br />\r\n              Purpose: Allows for complete replacement of a Major Purchase on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MajorPurchaseGoals_PutByIdModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RealEstateAssets_GetRealEstateAssetsByFactFinderIdByFactfinderid": {
+            "main": "./lib/actions/RealEstateAssets_GetRealEstateAssetsByFactFinderIdByFactfinderid.js",
+            "title": "Description: This operation retrieves all Real Estate Assets for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Real Estate Assets including description and market value.",
+            "description": "Description: This operation retrieves all Real Estate Assets for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Real Estate Assets including description and market value.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RealEstateAssets_GetRealEstateAssetsByFactFinderIdByFactfinderid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RealEstateAssets_PostByModel": {
+            "main": "./lib/actions/RealEstateAssets_PostByModel.js",
+            "title": "Description: The operation creates a Real Estate Asset.<br />\r\n              Purpose: Allows for creation of Real Estate Assets on a Fact Finder.",
+            "description": "Description: The operation creates a Real Estate Asset.<br />\r\n              Purpose: Allows for creation of Real Estate Assets on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RealEstateAssets_PostByModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RealEstateAssets_DeleteById": {
+            "main": "./lib/actions/RealEstateAssets_DeleteById.js",
+            "title": "Description: The operation removes a Real Estate Asset tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Real Estate Asset from a Fact Finder.",
+            "description": "Description: The operation removes a Real Estate Asset tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Real Estate Asset from a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RealEstateAssets_DeleteById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RealEstateAssets_GetById": {
+            "main": "./lib/actions/RealEstateAssets_GetById.js",
+            "title": "Description: This operation retrieves a single Real Estate Asset for the specified Real Estate Asset ID.<br />\r\n              Purpose: Provides access to the Real Estate Asset including description and market value.",
+            "description": "Description: This operation retrieves a single Real Estate Asset for the specified Real Estate Asset ID.<br />\r\n              Purpose: Provides access to the Real Estate Asset including description and market value.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RealEstateAssets_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RealEstateAssets_PutByIdModel": {
+            "main": "./lib/actions/RealEstateAssets_PutByIdModel.js",
+            "title": "Description: The operation updates a Real Estate Asset.<br />\r\n              Purpose: Allows for complete replacement of a Real Estate Asset on a Fact Finder.",
+            "description": "Description: The operation updates a Real Estate Asset.<br />\r\n              Purpose: Allows for complete replacement of a Real Estate Asset on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RealEstateAssets_PutByIdModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RetirementGoals_GetRetirementGoalsByFactFinderIdByFactfinderid": {
+            "main": "./lib/actions/RetirementGoals_GetRetirementGoalsByFactFinderIdByFactfinderid.js",
+            "title": "Description: This operation retrieves all Retirement Goals for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Retirement Goals including retirement date.",
+            "description": "Description: This operation retrieves all Retirement Goals for the specified Fact Finder ID.<br />\r\n              Purpose: Provides access to the Retirement Goals including retirement date.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RetirementGoals_GetRetirementGoalsByFactFinderIdByFactfinderid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RetirementGoals_PostByModel": {
+            "main": "./lib/actions/RetirementGoals_PostByModel.js",
+            "title": "Description: The operation creates a Retirement Goal.<br />\r\n              Purpose: Allows for creation of Retirement Goals on a Fact Finder.",
+            "description": "Description: The operation creates a Retirement Goal.<br />\r\n              Purpose: Allows for creation of Retirement Goals on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RetirementGoals_PostByModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RetirementGoals_DeleteById": {
+            "main": "./lib/actions/RetirementGoals_DeleteById.js",
+            "title": "Description: The operation removes a Retirement Goal tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Retirement Goal from a Fact Finder.",
+            "description": "Description: The operation removes a Retirement Goal tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Retirement Goal from a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RetirementGoals_DeleteById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RetirementGoals_GetById": {
+            "main": "./lib/actions/RetirementGoals_GetById.js",
+            "title": "Description: This operation retrieves a single Retirement Goal for the specified Retirement Goal ID.<br />\r\n              Purpose: Provides access to the Retirement Goal including retirement date.",
+            "description": "Description: This operation retrieves a single Retirement Goal for the specified Retirement Goal ID.<br />\r\n              Purpose: Provides access to the Retirement Goal including retirement date.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RetirementGoals_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RetirementGoals_PutByIdModel": {
+            "main": "./lib/actions/RetirementGoals_PutByIdModel.js",
+            "title": "Description: The operation updates a Retirement Goal.<br />\r\n              Purpose: Allows for complete replacement of a Retirement Goal on a Fact Finder.",
+            "description": "Description: The operation updates a Retirement Goal.<br />\r\n              Purpose: Allows for complete replacement of a Retirement Goal on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RetirementGoals_PutByIdModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RetirementGoals_GetRetirementExpensesByRetirementGoalIdByRetirementgoalid": {
+            "main": "./lib/actions/RetirementGoals_GetRetirementExpensesByRetirementGoalIdByRetirementgoalid.js",
+            "title": "Description: This operation retrieves all Retirement Goal Expenses for the specified Retirement Goal ID.<br />\r\n              Purpose: Provides access to the Retirement Goal Expenses including description and amount.",
+            "description": "Description: This operation retrieves all Retirement Goal Expenses for the specified Retirement Goal ID.<br />\r\n              Purpose: Provides access to the Retirement Goal Expenses including description and amount.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RetirementGoals_GetRetirementExpensesByRetirementGoalIdByRetirementgoalid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RetirementGoals_PostByRetirementgoalidModel": {
+            "main": "./lib/actions/RetirementGoals_PostByRetirementgoalidModel.js",
+            "title": "Description: The operation creates a Retirement Goal Expense.<br />\r\n              Purpose: Allows for creation of Retirement Goal Expenses on a Fact Finder.",
+            "description": "Description: The operation creates a Retirement Goal Expense.<br />\r\n              Purpose: Allows for creation of Retirement Goal Expenses on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RetirementGoals_PostByRetirementgoalidModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RetirementGoals_DeleteByRetirementgoalidId": {
+            "main": "./lib/actions/RetirementGoals_DeleteByRetirementgoalidId.js",
+            "title": "Description: The operation removes a Retirement Goal Expense tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Retirement Goal Expense from a Fact Finder.",
+            "description": "Description: The operation removes a Retirement Goal Expense tied to a Fact Finder.<br />\r\n              Purpose: Allows for removal of a Retirement Goal Expense from a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RetirementGoals_DeleteByRetirementgoalidId.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RetirementGoals_GetRetirementExpenseByRetirementgoalidId": {
+            "main": "./lib/actions/RetirementGoals_GetRetirementExpenseByRetirementgoalidId.js",
+            "title": "Description: This operation retrieves a single Retirement Goal Expense for the specified Retirement Goal Expense ID.<br />\r\n              Purpose: Provides access to the Retirement Goal Expense including description and amount.",
+            "description": "Description: This operation retrieves a single Retirement Goal Expense for the specified Retirement Goal Expense ID.<br />\r\n              Purpose: Provides access to the Retirement Goal Expense including description and amount.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RetirementGoals_GetRetirementExpenseByRetirementgoalidId.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RetirementGoals_PutByRetirementgoalidIdModel": {
+            "main": "./lib/actions/RetirementGoals_PutByRetirementgoalidIdModel.js",
+            "title": "Description: The operation updates a Retirement Goal Expense.<br />\r\n              Purpose: Allows for complete replacement of a Retirement Goal Expense on a Fact Finder.",
+            "description": "Description: The operation updates a Retirement Goal Expense.<br />\r\n              Purpose: Allows for complete replacement of a Retirement Goal Expense on a Fact Finder.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RetirementGoals_PutByRetirementgoalidIdModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "FactFinderServiceInformation_Get": {
+            "main": "./lib/actions/FactFinderServiceInformation_Get.js",
+            "title": "Description: This operation retrieves information statistics for the current service.<br />\r\n              Purpose: Provides access to Service Information.",
+            "description": "Description: This operation retrieves information statistics for the current service.<br />\r\n              Purpose: Provides access to Service Information.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/FactFinderServiceInformation_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "StatesProvinces_GetByCountry": {
+            "main": "./lib/actions/StatesProvinces_GetByCountry.js",
+            "title": "Description: This operation retrieves all States and Provinces for the specified country.<br />\r\n              Purpose: Provides access to the States and Provinces.",
+            "description": "Description: This operation retrieves all States and Provinces for the specified country.<br />\r\n              Purpose: Provides access to the States and Provinces.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/StatesProvinces_GetByCountry.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "StatesProvinces_GetById": {
+            "main": "./lib/actions/StatesProvinces_GetById.js",
+            "title": "Description: This operation retrieves the States and Provinces for the specified id.<br />\r\n              Purpose: Provides access to the States and Provinces.",
+            "description": "Description: This operation retrieves the States and Provinces for the specified id.<br />\r\n              Purpose: Provides access to the States and Provinces.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/StatesProvinces_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Users_GetByUsername": {
+            "main": "./lib/actions/Users_GetByUsername.js",
+            "title": "Description: This operation retrieves a single Fact Finder User.<br />\r\n              Purpose: Provides access to a Fact Finder User information including the User ID.",
+            "description": "Description: This operation retrieves a single Fact Finder User.<br />\r\n              Purpose: Provides access to a Fact Finder User information including the User ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Users_GetByUsername.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Users_PostByModel": {
+            "main": "./lib/actions/Users_PostByModel.js",
+            "title": "Description: The operation creates a Fact Finder User.<br />\r\n              Purpose: Allows for creation of Users to collect Fact Finder information.",
+            "description": "Description: The operation creates a Fact Finder User.<br />\r\n              Purpose: Allows for creation of Users to collect Fact Finder information.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Users_PostByModel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Users_GetFactFindersByAdvisorGuidByAdvisorguid": {
+            "main": "./lib/actions/Users_GetFactFindersByAdvisorGuidByAdvisorguid.js",
+            "title": "Description: This operation retrieves all Fact Finders related to the specified Advisor's Clients.<br />\r\n              Purpose: Provides access to a Client Fact Finder listing.",
+            "description": "Description: This operation retrieves all Fact Finders related to the specified Advisor's Clients.<br />\r\n              Purpose: Provides access to a Client Fact Finder listing.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Users_GetFactFindersByAdvisorGuidByAdvisorguid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Users_GetFactFinderByUserGuidByAdvisorguidClientguid": {
+            "main": "./lib/actions/Users_GetFactFinderByUserGuidByAdvisorguidClientguid.js",
+            "title": "Description: This operation retrieves a list of Fact Finders related to the specified Advisor's Client.<br />\r\n              Purpose: Provides access to a Client's Fact Finders.",
+            "description": "Description: This operation retrieves a list of Fact Finders related to the specified Advisor's Client.<br />\r\n              Purpose: Provides access to a Client's Fact Finders.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Users_GetFactFinderByUserGuidByAdvisorguidClientguid.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Users_GetById": {
+            "main": "./lib/actions/Users_GetById.js",
+            "title": "Description: This operation retrieves a single Fact Finder User.<br />\r\n              Purpose: Provides access to a Fact Finder User information including the username.",
+            "description": "Description: This operation retrieves a single Fact Finder User.<br />\r\n              Purpose: Provides access to a Fact Finder User information including the username.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Users_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Users_GetFactFindersByUserNameByUsername": {
+            "main": "./lib/actions/Users_GetFactFindersByUserNameByUsername.js",
+            "title": "Description: This operation retrieves all Fact Finders for the specified username.<br />\r\n              Purpose: Provides access to the Fact Finder listing including status.",
+            "description": "Description: This operation retrieves all Fact Finders for the specified username.<br />\r\n              Purpose: Provides access to the Fact Finder listing including status.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Users_GetFactFindersByUserNameByUsername.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

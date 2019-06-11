@@ -1,0 +1,10 @@
+{
+    "type": "object",
+    "properties": {
+        "demographicId": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        }
+    }
+}

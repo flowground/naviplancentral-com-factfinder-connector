@@ -1,0 +1,82 @@
+{
+    "type": "object",
+    "properties": {
+        "demographicId": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "requestBody": {
+            "properties": {
+                "birthDate": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "dependentOf": {
+                    "enum": [
+                        "Head1",
+                        "Head2",
+                        "Joint",
+                        "Other"
+                    ],
+                    "type": "string"
+                },
+                "externalDestinationId": {
+                    "maxLength": 64,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "firstName": {
+                    "maxLength": 255,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "lastName": {
+                    "maxLength": 255,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "relationship": {
+                    "enum": [
+                        "Son",
+                        "Daughter",
+                        "FosterSon",
+                        "FosterDaughter",
+                        "Grandson",
+                        "Granddaughter",
+                        "Nephew",
+                        "Niece",
+                        "MaleCousin",
+                        "FemaleCousin",
+                        "Father",
+                        "Mother",
+                        "Grandfather",
+                        "Grandmother",
+                        "Uncle",
+                        "Aunt",
+                        "Brother",
+                        "Sister",
+                        "SonInLaw",
+                        "DaughterInLaw",
+                        "MaleOther",
+                        "FemaleOther"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "firstName",
+                "lastName",
+                "birthDate",
+                "relationship",
+                "dependentOf"
+            ],
+            "type": "object"
+        }
+    }
+}

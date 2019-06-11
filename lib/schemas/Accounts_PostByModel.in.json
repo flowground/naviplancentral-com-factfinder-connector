@@ -1,0 +1,107 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "accountType": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "description": {
+                    "maxLength": 255,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "externalDestinationId": {
+                    "maxLength": 64,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "externalSourceId": {
+                    "maxLength": 64,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "externalSourceName": {
+                    "maxLength": 64,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "factFinderId": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "holdings": {
+                    "items": {
+                        "properties": {
+                            "costBasis": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "cusip": {
+                                "maxLength": 31,
+                                "minLength": 0,
+                                "type": "string"
+                            },
+                            "description": {
+                                "maxLength": 255,
+                                "minLength": 0,
+                                "type": "string"
+                            },
+                            "externalDestinationId": {
+                                "maxLength": 64,
+                                "minLength": 0,
+                                "type": "string"
+                            },
+                            "marketValue": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "symbol": {
+                                "maxLength": 31,
+                                "minLength": 0,
+                                "type": "string"
+                            },
+                            "valuationDate": {
+                                "format": "date-time",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "description"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "lastUpdated": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "marketValue": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "owner": {
+                    "enum": [
+                        "Head1",
+                        "Head2",
+                        "Joint",
+                        "FamilyMember",
+                        "Other"
+                    ],
+                    "type": "string"
+                },
+                "ownerDependentId": {
+                    "format": "int32",
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "factFinderId",
+                "description"
+            ],
+            "type": "object"
+        }
+    }
+}

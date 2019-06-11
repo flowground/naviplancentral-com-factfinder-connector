@@ -1,0 +1,51 @@
+{
+    "type": "object",
+    "properties": {
+        "educationGoalId": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "requestBody": {
+            "properties": {
+                "annualCost": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "externalDestinationId": {
+                    "maxLength": 64,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "member": {
+                    "enum": [
+                        "Head1",
+                        "Head2",
+                        "Dependent"
+                    ],
+                    "type": "string"
+                },
+                "memberDependentId": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "startYear": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "years": {
+                    "format": "int32",
+                    "maximum": 99,
+                    "minimum": 1,
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

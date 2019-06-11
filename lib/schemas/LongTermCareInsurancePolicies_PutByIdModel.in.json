@@ -1,0 +1,56 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "requestBody": {
+            "properties": {
+                "benefit": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "benefitFrequency": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "description": {
+                    "maxLength": 255,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "externalDestinationId": {
+                    "maxLength": 64,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "factFinderId": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "insured": {
+                    "enum": [
+                        "Client",
+                        "CoClient"
+                    ],
+                    "type": "string"
+                },
+                "premium": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "premiumFrequency": {
+                    "format": "int32",
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "factFinderId",
+                "description"
+            ],
+            "type": "object"
+        }
+    }
+}

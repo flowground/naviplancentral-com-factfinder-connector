@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "properties": {
+        "entity": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "CriticalIllnessInsurancePolicies",
+                "DisabilityInsurancePoliciesPremium",
+                "DisabilityInsurancePoliciesBenefit",
+                "Expenses",
+                "Liabilities",
+                "LifeInsurancePolicies",
+                "LongTermCareInsurancePoliciesBenefit",
+                "LongTermCareInsurancePoliciesPremium",
+                "RealEstateAssets",
+                "RetirementExpenses"
+            ]
+        },
+        "country": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "UnitedStates",
+                "Canada"
+            ]
+        }
+    }
+}

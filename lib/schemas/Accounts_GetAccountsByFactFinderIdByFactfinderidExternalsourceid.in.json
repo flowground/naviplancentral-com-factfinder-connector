@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "properties": {
+        "factFinderId": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "externalSourceId": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,67 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "requestBody": {
+            "properties": {
+                "annualPeriod": {
+                    "format": "int32",
+                    "maximum": 99,
+                    "minimum": 1,
+                    "type": "integer"
+                },
+                "description": {
+                    "maxLength": 255,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "endDate": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "expenseAmount": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "expenseTypeId": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "externalDestinationId": {
+                    "maxLength": 64,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "factFinderId": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "frequency": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "member": {
+                    "enum": [
+                        "Head1",
+                        "Head2",
+                        "Joint"
+                    ],
+                    "type": "string"
+                },
+                "startDate": {
+                    "format": "date-time",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "factFinderId",
+                "description"
+            ],
+            "type": "object"
+        }
+    }
+}

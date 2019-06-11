@@ -1,0 +1,76 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "countryCode": {
+                    "enum": [
+                        "UnitedStates",
+                        "Canada"
+                    ],
+                    "type": "string"
+                },
+                "externalDemographicsSourceId": {
+                    "type": "string"
+                },
+                "externalId": {
+                    "type": "string"
+                },
+                "externalSystem": {
+                    "enum": [
+                        "Naviplan"
+                    ],
+                    "type": "string"
+                },
+                "factFinderUserId": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "modules": {
+                    "items": {
+                        "properties": {
+                            "available": {
+                                "type": "boolean"
+                            },
+                            "moduleName": {
+                                "enum": [
+                                    "Demographics",
+                                    "Assets",
+                                    "Liabilities",
+                                    "Incomes",
+                                    "Expenses",
+                                    "Insurance",
+                                    "Retirement",
+                                    "Education",
+                                    "MajorPurchase"
+                                ],
+                                "type": "string"
+                            },
+                            "visited": {
+                                "type": "boolean"
+                            }
+                        },
+                        "required": [
+                            "moduleName"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "status": {
+                    "enum": [
+                        "New",
+                        "InProgress",
+                        "ClientSubmitted",
+                        "AdvisorAccepted"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "factFinderUserId"
+            ],
+            "type": "object"
+        }
+    }
+}

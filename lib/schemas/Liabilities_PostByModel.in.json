@@ -1,0 +1,93 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "balance": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "balanceAsOfDate": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "description": {
+                    "maxLength": 255,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "externalDestinationId": {
+                    "maxLength": 64,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "externalSourceId": {
+                    "maxLength": 64,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "externalSourceName": {
+                    "maxLength": 64,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "factFinderId": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "frequency": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "interestRate": {
+                    "format": "double",
+                    "maximum": 50,
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "lastUpdated": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "liabilityType": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "loanDate": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "originalPrincipal": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "owner": {
+                    "enum": [
+                        "Client",
+                        "CoClient",
+                        "Joint"
+                    ],
+                    "type": "string"
+                },
+                "payment": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "paymentType": {
+                    "enum": [
+                        "InterestOnly",
+                        "PrincipalAndInterest",
+                        "SetPrincipal",
+                        "LastPeriod"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "factFinderId",
+                "description"
+            ],
+            "type": "object"
+        }
+    }
+}

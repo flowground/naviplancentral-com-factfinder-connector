@@ -1,0 +1,48 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "amount": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "description": {
+                    "maxLength": 255,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "externalDestinationId": {
+                    "maxLength": 64,
+                    "minLength": 0,
+                    "type": "string"
+                },
+                "factFinderId": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "majorPurchaseGoalTypeId": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "member": {
+                    "enum": [
+                        "Head1",
+                        "Head2",
+                        "Joint"
+                    ],
+                    "type": "string"
+                },
+                "targetDate": {
+                    "format": "date-time",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "factFinderId",
+                "description"
+            ],
+            "type": "object"
+        }
+    }
+}
